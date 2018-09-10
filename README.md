@@ -330,4 +330,4 @@ Use [Gitflow workflow](https://www.atlassian.com/git/tutorials/comparing-workflo
 
 ### 3.3 Commits
 
-Explicit git commit messages help the code review process and give you a precise log of what has changed throughout the project. Please read [Chris Beams's article](https://chris.beams.io/posts/git-commit/) to master the best practice of writing commit messages. Also, for the sake of clarity and to link your work to the corresponding Jira ticket, prefix your commit messages with the ticket number you're working on (e.g., APC-42 Integrate analytics platform).
+Explicit git commit messages help the code review process and give you a precise log of what has changed throughout the project. Read [Chris Beams's article](https://chris.beams.io/posts/git-commit/) to master the best practice of writing commit messages. If you're working with a project management tool like [Jira](https://www.atlassian.com/software/jira), link your work to the corresponding Jira ticket by prefixing your commit messages with the ticket number you're working on (e.g., APC-42 Integrate analytics platform).
