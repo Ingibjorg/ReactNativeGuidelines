@@ -1,8 +1,8 @@
 # React Native Guidelines
 
-Clean code and a clear project structure make everything better. We want our code to be readable, clean, and to the point. A fellow programmer should be able to read your code and understand it without having to refactor it first or spend hours trying to understand what you were trying to achieve. If you write code nicely to begin, you'll also make it easier on yourself in case you ever need to revisit the old code.
+Clean code and a clear project structure make everything better. We want our code to be readable, clean, and to the point. A fellow programmer should be able to read your code and understand it without having to refactor it first or spend hours trying to understand what you were trying to achieve. If you write code nicely to begin with, you'll also make it easier on yourself in case you ever need to revisit the old code.
 
-Here are my recommended React Native Guidelines that allow you and your team to write great code.
+Here are React Native Guidelines that allow you and your team to write great code.
 
 ## 1. Project Structure
 
@@ -52,7 +52,7 @@ Every component should have a corresponding snapshot test created with [Jest](ht
 
 `__test__/components/results/Results.test.js`
 
-Write unit tests for your util functions and functions inside components. I recommend using [enzyme](https://github.com/airbnb/enzyme) and [sinon](https://sinonjs.org/) for this purpose.
+Write unit tests for your util functions and functions inside components. You can use [enzyme](https://github.com/airbnb/enzyme) and [sinon](https://sinonjs.org/) for this purpose.
 
 [SonarQuebe](https://www.sonarqube.org/) is a great tool to help you maintain your test coverage and detect any issues.
 
@@ -67,7 +67,6 @@ Keep all constants that are used more than once in a constants.js file.
 It's a good practice to keep all the strings in the same place. If you ever need to localize your app, a string file comes in handy. The string file decreases the likelihood of typos and makes it easier to replace strings if you need to in the future.
 
 Place your strings in `stringConstants.js`, order them alphabetically, and group strings together based on where they're displayed. Group reusable strings together as 'common'. To make it easier to reuse strings, store them in Upper Camel Case and utilize functions such as `toUpperCase` or `toLowerCase` when another string form is needed.
-
 
 **Example:**
 
@@ -283,7 +282,7 @@ class MyComponent extends React.Component {
 
 #### 2.5.3 Closures
 
-Create a new function instead of passing closures to components. If we pass closures directly to the component, every time the parent component renders, a new function is created and passed to the subcomponent (TouchableOpacity in the example below). As a result,  the subcomponent re-renders automatically, regardless of whether its other props have changed. Also, by passing in a function, we make the code easier to read.
+Create a new function instead of passing closures to components. If we pass closures directly to the component, every time the parent component renders, a new function is created and passed to the subcomponent (TouchableOpacity in the example below). As a result, the subcomponent re-renders automatically, regardless of whether its other props have changed. Also, by passing in a function, we make the code easier to read.
 
 **Example:**
 
