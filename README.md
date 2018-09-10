@@ -6,7 +6,7 @@ Here are React Native Guidelines that allow you and your team to write great cod
 
 ## 1. Project Structure
 
-- Place tests in `__tests__`
+- Place tests in `__tests__/`. You can place this folder in the root of the project or locate it within the folder of the files that are being tested.
 - Place assets in `assets/`
   - Place assets such as images in their own folder `assets/images/`
 - Place JavaScript code in `src/`
@@ -54,7 +54,7 @@ Every component should have a corresponding snapshot test created with [Jest](ht
 
 Write unit tests for your util functions and functions inside components. You can use [enzyme](https://github.com/airbnb/enzyme) and [sinon](https://sinonjs.org/) for this purpose.
 
-[SonarQuebe](https://www.sonarqube.org/) is a great tool to help you maintain your test coverage and detect any issues.
+[SonarQube](https://www.sonarqube.org/) is a great tool to help you maintain your test coverage and detect any issues.
 
 ### 2.3 Helper files
 
