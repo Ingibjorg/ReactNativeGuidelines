@@ -123,7 +123,7 @@ const WhiteView = styled.View`
   background-color: white;
 `;
 
-class MyComponent extends React.Component {
+class MyComponent extends Component {
   render() {
     return (
       <WhiteView>
@@ -145,7 +145,7 @@ Destructuring props simplifies the code and makes the code more readable.
 
 ```javascript
 // Bad
-class MyComponent extends React.Component {
+class MyComponent extends Component {
   render() {
     return (
       <View>
@@ -157,7 +157,7 @@ class MyComponent extends React.Component {
 }
 
 // Good
-class MyComponent extends React.Component {
+class MyComponent extends Component {
   render() {
     const { title, message } = this.props;
     return (
@@ -178,14 +178,14 @@ Use short-circuit evaluation for conditional rendering for one condition.
 
 ```javascript
 // Bad
-class MyComponent extends React.Component {
+class MyComponent extends Component {
   render() {
     return isTrue ? <Text>True</Text> : null;
   }
 }
 
 // Good
-class MyComponent extends React.Component {
+class MyComponent extends Component {
   render() {
     return isTrue && <Text>True<Text>;
   }
@@ -206,7 +206,7 @@ const RedButton = styled.TouchableOpacity`
   background-color: red;
 `;
 
-class MyComponent extends React.Component {
+class MyComponent extends Component {
   render() {
     const { isRed } = this.props;
     return isRed ? <RedButton>Red</RedButton> : <BlueButton>Blue</BlueButton>;
@@ -238,7 +238,7 @@ export default CustomButton;
 import CustomButton from './CustomButton.js';
 import { capitalizeFirstLetter } from '../utils.js'; // Helper function
 
-class MyComponent extends React.Component {
+class MyComponent extends Component {
   render() {
     const { isRed } = this.props;
     const color = isRed ? 'red' : 'blue';
@@ -251,7 +251,7 @@ class MyComponent extends React.Component {
 
 ```javascript
 // Bad
-class MyComponent extends React.Component {
+class MyComponent extends Component {
   render() {
     const { isSunny, isRaining } = this.props;
     return isSunny ? (
@@ -267,7 +267,7 @@ class MyComponent extends React.Component {
 }
 
 // Good
-class MyComponent extends React.Component {
+class MyComponent extends Component {
   renderRainingCondition = () => {
     const { isRaining } = this.props;
     return isRaining ? <Text>Take the umbrella and go outside!</Text> : <Text>Go outside, it is sunny!</Text>;
@@ -288,7 +288,7 @@ Create a new function instead of passing closures to components. If we pass clos
 
 ```javascript
 // Bad
-class MyComponent extends React.Component {
+class MyComponent extends Component {
   render() {
     const { navigation } = this.props;
     return (
@@ -303,7 +303,7 @@ class MyComponent extends React.Component {
 }
 
 // Good
-class MyComponent extends React.Component {
+class MyComponent extends Component {
   navigateToSomeScreen = () => {
     const title = 'New Title';
     navigation.navigate({ routeName: 'SomeScreen', params: { title } });
