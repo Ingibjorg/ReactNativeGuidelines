@@ -16,17 +16,17 @@ Here are my recommended React Native Guidelines that allow you and your team to 
     - For standalone components, place them in the components folder `src/components/Home.js`
   - Place reusable components in `src/components/common/`
 
-## 1.2 File naming
+### 1.2 File naming
 
-### 1.2.1 Folders
+#### 1.2.1 Folders
 
 Give folders a name in Dash Case (e.g., `dash-case`).
 
-### 1.2.2 Components
+#### 1.2.2 Components
 
 Give components names in [UpperCamelCase](http://en.wikipedia.org/wiki/CamelCase), except when the file is named index.js.
 
-### 1.2.3 Helper files and assets
+#### 1.2.3 Helper files and assets
 
 Helper files (e.g., `utils.js` and `constants.js`) are written in **plural**.
 
@@ -34,15 +34,15 @@ Assets (e.g., `questionMark.png`) along with helper files are written in [lowerC
 
 ---
 
-# 2. Code Guidelines
+## 2. Code Guidelines
 
-## 2.1 Formatting
+### 2.1 Formatting
 
 The code should be formatted consistently. Consistent code reduces syntax related distractions and allows us to focus on the logic. Use ESLint to format your code and configure the rules by extending [Airbnb's style guide](https://github.com/airbnb/javascript/blob/master/react/README.md). To avoid the manual work of formatting, you can use [Prettier](https://github.com/prettier/prettier-vscode) and integrate it with ESLint.
 
 To maintain excellent code quality and prevent bad commits, use [husky](https://www.npmjs.com/package/husky) to ensure all code is linted and unit tests pass before pushing.
 
-## 2.2 Tests
+### 2.2 Tests
 
 Every component should have a corresponding snapshot test created with [Jest](https://facebook.github.io/jest/docs/en/snapshot-testing.html). Snapshots help us to maintain the desired UI and prevent unwanted changes (e.g., when altering a widely used component). Tests should be placed in the `__tests__` folder, following the project's file structure and matching the name of the component the test is targeting.
 
@@ -56,13 +56,13 @@ Write unit tests for your util functions and functions inside components. I reco
 
 [SonarQuebe](https://www.sonarqube.org/) is a great tool to help you maintain your test coverage and detect any issues.
 
-## 2.3 Helper files
+### 2.3 Helper files
 
-### 2.3.1 Constants
+#### 2.3.1 Constants
 
 Keep all constants that are used more than once in a constants.js file.
 
-### 2.3.2 Strings
+#### 2.3.2 Strings
 
 It's a good practice to keep all the strings in the same place. If you ever need to localize your app, a string file comes in handy. The string file decreases the likelihood of typos and makes it easier to replace strings if you need to in the future.
 
@@ -83,7 +83,7 @@ export const someScreenStrings = {
 };
 ```
 
-### 2.3.3 Styles
+#### 2.3.3 Styles
 
 To prevent typos, keep all your styles in one place, `styles.js`, ordered alphabetically.
 
@@ -101,11 +101,11 @@ export const fontFamily = {
 };
 ```
 
-### 2.3.4 Common functions
+#### 2.3.4 Common functions
 
 Place functions that are used multiple times in the app in `utils.js`. Keep them there to make it easy to test the functions and enables reusability.
 
-## 2.4 Styling components
+### 2.4 Styling components
 
 You can use React Native's [StyleSheet](https://facebook.github.io/react-native/docs/stylesheet) to style your components. Another alternative is [Styled Components](https://www.styled-components.com/). Styled Components allow you to write actual CSS code to style your components. It also introduces clarity as it removes the mapping between components and styles. Styled Components also allow you to extend existing styles which offers reusability.
 
@@ -136,9 +136,9 @@ class MyComponent extends React.Component {
 }
 ```
 
-## 2.5 Programming rules
+### 2.5 Programming rules
 
-# 2.5.1 Destructuring
+#### 2.5.1 Destructuring
 
 Destructuring props simplifies the code and makes the code more readable.
 
@@ -171,7 +171,7 @@ class MyComponent extends React.Component {
 }
 ```
 
-# 2.5.2 Conditional Rendering
+#### 2.5.2 Conditional Rendering
 
 Use short-circuit evaluation for conditional rendering for one condition.
 
@@ -259,7 +259,7 @@ class MyComponent extends React.Component {
       isRaining ? (
         <Text>Take the umbrella and go outside!</Text>
       ) : (
-        <Text>Go outside, it's sunny!</Text>
+        <Text>Go outside, it is sunny!</Text>
       )
     ) : (
       <Text>Stay in!</Text>
@@ -271,7 +271,7 @@ class MyComponent extends React.Component {
 class MyComponent extends React.Component {
   renderRainingCondition = () => {
     const { isRaining } = this.props;
-    return isRaining ? <Text>Take the umbrella and go outside!</Text> : <Text>Go outside, it's sunny!</Text>;
+    return isRaining ? <Text>Take the umbrella and go outside!</Text> : <Text>Go outside, it is sunny!</Text>;
   };
 
   render() {
@@ -281,7 +281,7 @@ class MyComponent extends React.Component {
 }
 ```
 
-# 2.5.3 Closures
+#### 2.5.3 Closures
 
 Create a new function instead of passing closures to components. If we pass closures directly to the component, every time the parent component renders, a new function is created and passed to the subcomponent (TouchableOpacity in the example below). As a result,  the subcomponent re-renders automatically, regardless of whether its other props have changed. Also, by passing in a function, we make the code easier to read.
 
@@ -317,7 +317,7 @@ class MyComponent extends React.Component {
 }
 ```
 
-## 2.6 Third-Party Libraries
+### 2.6 Third-Party Libraries
 
 The React Native community is fast-paced, and therefore we have to be careful when using third-party libraries. The library should be well received within the community and actively maintained. You can evaluate this by the number of open issues and how many stars the repo has. Libraries are classified as unmaintained when the last commit was more than 6 months ago.
 
@@ -325,10 +325,10 @@ After you've decided to use a library, make sure to run `yarn outdated` every on
 
 ## 3. Development Process
 
-## 3.1 Workflow
+### 3.1 Workflow
 
 Use [Gitflow workflow](https://www.atlassian.com/git/tutorials/comparing-workflows/gitflow-workflow) as a branching model. This structure provides a robust framework for managing projects.
 
-## Commit message convention
+### 3.3 Commits
 
 Explicit git commit messages help the code review process and give you a precise log of what has changed throughout the project. Please read [Chris Beams's article](https://chris.beams.io/posts/git-commit/) to master the best practice of writing commit messages. Also, for the sake of clarity and to link your work to the corresponding Jira ticket, prefix your commit messages with the ticket number you're working on (e.g., APC-42 Integrate analytics platform).
