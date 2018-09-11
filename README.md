@@ -1,8 +1,10 @@
 # React Native Guidelines
 
-Clean code and a clear project structure make everything better. We want our code to be readable, clean, and to the point. A fellow programmer should be able to read your code and understand it without having to refactor it first or spend hours trying to understand what you were trying to achieve. If you write code nicely to begin with, you'll also make it easier on yourself in case you ever need to revisit the old code.
+Clean code and a clear project structure make everything better. We want our code to be readable, clean, and to the point. A fellow programmer should be able to read your code and understand it without having to refactor it first or spend hours trying to understand what you were trying to achieve. If you write code nicely, to begin with, you'll also make it easier on yourself in case you ever need to revisit the old code.
 
-Here are React Native Guidelines that allow you and your team to write great code.
+Here are React Native Guidelines that allow you and your team to write great code. 
+
+_I've set up a [React Native scaffold](https://github.com/Ingibjorg/react-native-scaffold) that helps you kicking-off a new project that follows these guidelines._
 
 ## 1. Project Structure
 
